@@ -1,0 +1,13 @@
+#Wed Sep 05 13:39:38 CST 2012
+eclipse.preferences.version=1
+encoding//WebRoot/js/String.js=UTF-8
+encoding//WebRoot/js/business/deptDialog.js=UTF-8
+encoding//WebRoot/js/business/staff.js=UTF-8
+encoding//WebRoot/js/department.js=UTF-8
+encoding//WebRoot/js/export.js=utf-8
+encoding//WebRoot/js/scriptvalidator.js=UTF-8
+encoding//WebRoot/sql/initSQL/initCreateSQL_20120822.sql=UTF-8
+encoding//WebRoot/views/common/export/export.ftl=gbk
+encoding//src/com/sunraysoft/hr/constant/LogConst.java=UTF-8
+encoding//src/com/sunraysoft/hr/util/DateUtil.java=UTF-8
+encoding//src/messageResource.properties=UTF-8

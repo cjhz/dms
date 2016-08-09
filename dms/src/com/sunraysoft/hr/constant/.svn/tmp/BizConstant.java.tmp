@@ -1,0 +1,41 @@
+package com.sunraysoft.hr.constant;
+
+public class BizConstant {
+
+	/**
+	 * 删除状态
+	 */
+	public static final long SYSTEM_DATA_DELETE_FLAG_NORMAL = 0L;// 正常数据
+	public static final long SYSTEM_DATA_DELETE_FLAG_INVALID = 1L;// 已删除数据
+	
+<<<<<<< .mine
+	/**
+	 * 字典表数据类型
+	 */
+	public static final int DICT_DATA_TYPE_1=1;//机构职级
+=======
+	public static final int DICT_DATA_TYPE_1=1;//机构职级
+>>>>>>> .r80641
+	public static final int DICT_DATA_TYPE_2=2;//编制
+	public static final int DICT_DATA_TYPE_3=3;//职级
+	public static final int DICT_DATA_TYPE_4=4;//工作分工
+	public static final int DICT_DATA_TYPE_5=5;//文化程度
+	public static final int DICT_DATA_TYPE_6=6;//政治面貌
+	public static final int DICT_DATA_TYPE_7=7;//人员属性
+	
+<<<<<<< .mine
+	/**
+	 * 性别
+	 */
+	public static final Long SEX_KEY_1=1L;
+	public static final Long SEX_KEY_2=2L;
+	public static final String SEX_TXT_1="男";
+	public static final String SEX_TXT_2="女";
+	
+	
+=======
+	public static final int DICT_OBSER_TYPE_1=1;//机构立功表彰
+	public static final int DICT_OBSER_TYPE_2=2;//人员立功表彰
+	
+>>>>>>> .r80641
+}

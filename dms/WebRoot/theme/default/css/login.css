@@ -1,0 +1,41 @@
+@import url("login_reset.css");
+body {background:url(../images/login/body_bg.jpg) #5ea4d8 repeat-x left top; font-family:Arial, Helvetica, sans-serif; overflow:hidden;}
+.top {width:100%; overflow:hidden; float:right; text-indent:-1000px; text-align:left; height:289px; background:url(../images/login/top_title.jpg) right top no-repeat;} 
+.login {width:100%; overflow:hidden; float:right; background:url(../images/login/login.jpg) right top no-repeat; height:148px;}
+.bottom {width:100%; overflow:hidden; float:right; background:url(../images/login/bottom_bg.jpg) right top no-repeat; height:253px; text-align:left; text-indent:-9999px;}
+
+.login_form {width:170px; float:right; margin-right:194px; display:inline;}
+.login_form ul {width:170px; float:left;}
+.login_form ul li {width:170px; float:left; text-align:left; overflow:hidden;}
+.name {margin-top:4px;}
+.password {margin-top:11px;}
+.code {margin-top:11px;}
+.code img {margin-left:5px; vertical-align:middle;}
+.button {margin-top:11px;}
+.login_form_input {width:165px; border:#c3c1c1 1px solid; outline:0; background:url(../images/login/input_bg.jpg) repeat-x left top; height:24px; line-height:24px; font-size:12px; color:#000;}
+.code_input {width:88px; border:#c3c1c1 1px solid; outline:none; float:left; background:url(../images/login/input_bg.jpg) repeat-x left top; height:24px; line-height:24px; font-size:12px; color:#000;}
+.botton {width:73px; border:0px; background:url(../images/login/btn_bg.jpg) no-repeat left top; outline:0; height:27px; line-height:20px; cursor:pointer; font-size:12px; color:#ffffff; text-align:center;}
+
+.login_info_box {
+	position: absolute;
+	font-size: 12px;
+	left: 590px;
+	top: 450px;
+	z-index: 9;
+	width: 300px;
+	border: 1px #a0d140 solid;
+	background: #e8f6e1 url(../images/login/ok_box.gif) 20px center no-repeat;
+	padding: 8px 8px 8px 60px;
+}
+
+.login_error_box {
+	font-size: 12px;
+	position: absolute;
+	left: 590px;
+	top: 450px;
+	width: 300px;
+	z-index: 9;
+	border: 1px #ff1221 solid;
+	background: #ffe8e0 url(../images/login/error_box.gif) 20px center no-repeat;
+	padding: 8px 8px 8px 60px;
+}

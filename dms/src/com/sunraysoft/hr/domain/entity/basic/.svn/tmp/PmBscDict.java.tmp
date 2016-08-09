@@ -1,0 +1,105 @@
+package com.sunraysoft.hr.domain.entity.basic;
+
+import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+import com.sunraysoft.hr.domain.entity.base.BizEntity;
+
+/**
+ * PmBscDict entity. @author MyEclipse Persistence Tools
+ */
+@Entity
+@Table(name = "PM_BSC_DICT")
+@SequenceGenerator(name="sg", sequenceName="SEQ_PM_BSC_DICT", allocationSize=1)
+@org.hibernate.annotations.Entity(dynamicInsert = true, dynamicUpdate = true)
+public class PmBscDict extends BizEntity {
+
+	// Fields
+	private Long pid;
+	private Long vcCode;// type(1;//机构职级2;//编制3;//职级4;//工作分工5;//文化程度6;//政治面貌7;//人员属性)
+	private Long vcAttrid;// code
+	private String vcName;// name
+	private String vcRemark;// memo
+	private Long vcPosition;//sort
+
+	// Constructors
+
+	/** default constructor */
+	public PmBscDict() {
+	}
+
+	/** minimal constructor */
+	public PmBscDict(Long pid) {
+		this.pid = pid;
+	}
+
+	// Property accessors
+	@Id
+	@Column(name = "PID", unique = true, nullable = false, precision = 20, scale = 0)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="sg")
+	public Long getPid() {
+		return this.pid;
+	}
+
+	public void setPid(Long pid) {
+		this.pid = pid;
+	}
+
+	@Column(name = "VC_CODE", precision = 20, scale = 0)
+	public Long getVcCode() {
+		return this.vcCode;
+	}
+
+	public void setVcCode(Long vcCode) {
+		this.vcCode = vcCode;
+	}
+
+	@Column(name = "VC_ATTRID", precision = 20, scale = 0)
+	public Long getVcAttrid() {
+		return this.vcAttrid;
+	}
+
+	public void setVcAttrid(Long vcAttrid) {
+		this.vcAttrid = vcAttrid;
+	}
+
+	@Column(name = "VC_NAME", length = 500)
+	public String getVcName() {
+		return this.vcName;
+	}
+
+	public void setVcName(String vcName) {
+		this.vcName = vcName;
+	}
+
+	@Column(name = "VC_REMARK", length = 500)
+	public String getVcRemark() {
+		return this.vcRemark;
+	}
+
+	public void setVcRemark(String vcRemark) {
+		this.vcRemark = vcRemark;
+	}
+
+	@Column(name = "VC_POSITION", precision = 20, scale = 0)
+	public Long getVcPosition() {
+		return this.vcPosition;
+	}
+
+	public void setVcPosition(Long vcPosition) {
+		this.vcPosition = vcPosition;
+	}
+	
+}

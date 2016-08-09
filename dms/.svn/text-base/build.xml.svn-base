@@ -1,0 +1,114 @@
+<project name="DMS" default="dist" basedir=".">
+
+    <!-- Name of project and version -->
+    <property name="proj.name"      value="DMS"/>
+    <property name="proj.shortname" value="DMS"/>
+	<property name="version" value="1.0.1.11" />
+
+    <!-- Global properties for this build -->
+    <property name="database.dir"           value="database"/>
+    <property name="src.java.dir"           value="src"/>
+    <property name="lib.dir"                value="WebRoot/WEB-INF/lib"/>
+	<property name="common.lib.dir"			value="D:\crm_tomcat\Tomcat6.0\lib" />
+    <property name="build.dir"              value="buildout"/>
+	<property name="web.dir"              value="WebRoot"/>
+	<property name="dist.dir"              value="dist"/>
+	
+	<property name="prefx" value="sg" />
+	<property name="name" value="bwa" />
+	
+	<tstamp> 
+		<format property="buildtime" pattern="yyyyMMdd" />
+	</tstamp> 
+
+    <!-- Classpath declaration -->
+    <path id="project.classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+            <include name="**/*.zip"/>
+        </fileset>
+    	<fileset dir="${common.lib.dir}">
+            <include name="**/*.jar"/>
+            <include name="**/*.zip"/>
+        </fileset>
+    </path>
+
+    <!-- Useful shortcuts -->
+    <patternset id="meta.files">
+        <include name="**/*.xml"/>
+        <include name="**/*.properties"/>
+    </patternset>
+
+    <!-- Clean up -->
+    <target name="clean" description="Clean the build directory">
+        <delete dir="${build.dir}"/>
+    	<delete dir="${dist.dir}"/>
+    </target>
+
+    <!-- Compile Java source -->
+    <target name="compile">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.java.dir}"
+               destdir="${build.dir}"
+               classpathref="project.classpath" debug="on">
+        	<compilerarg line="-encoding UTF-8 "/> 
+        </javac>
+    </target>
+
+    <!-- Copy metadata to build classpath -->
+    <target name="copymetafiles">
+        <mkdir dir="${dist.dir}/web/WEB-INF/classes"/>
+        <copy todir="${dist.dir}/web/WEB-INF/classes">
+            <fileset dir="${src.java.dir}">
+                <patternset refid="meta.files"/>
+            </fileset>
+        </copy>
+    	<copy todir="${dist.dir}/web/WEB-INF/classes">
+            <fileset dir="${build.dir}">
+            </fileset>
+        </copy>
+    </target>
+	
+	<target name="copywebcontext">
+		<mkdir dir="${dist.dir}/web"/>
+        <copy todir="${dist.dir}/web">
+            <fileset dir="${web.dir}">
+            	<exclude name="config.properties" />
+            	<exclude name="synconfig.properties" />
+            </fileset>
+        </copy>
+    </target>
+	
+	 <target name="copyclass" depends="compile">
+    	<copy todir="${dist.dir}/web/WEB-INF/classes">
+            <fileset dir="${build.dir}">
+            </fileset>
+        </copy>
+    </target>
+	
+	
+	
+	<!--
+	<target name="jar" depends="compile">
+		<mkdir dir="${build.dir}/lib"/>
+		<jar jarfile="${build.dir}/lib/${prefx}-${name}-${version}-${buildtime}.jar" basedir="${build.dir}" >
+		</jar>
+		<copy todir="${dist.dir}/web/WEB-INF/lib">
+            <fileset dir="${build.dir}/lib">
+            </fileset>
+        </copy>
+		<copy todir="${dist.dir}/web/WEB-INF/lib">
+            <fileset dir="${common.lib.dir}">
+            </fileset>
+        </copy>
+    </target>
+    -->
+	
+	<!-- 更新包zip压缩文件 -->
+	<target name="dist" depends="clean, copyclass, copywebcontext, copymetafiles">
+		<echo level="info">step6: zip打包..</echo>
+		<zip destfile="pm_${version}_${buildtime}.zip">
+			<zipfileset dir="${dist.dir}/web" />
+		</zip>
+	</target>
+</project>

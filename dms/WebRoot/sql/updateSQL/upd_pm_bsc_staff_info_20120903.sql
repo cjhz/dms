@@ -1,0 +1,8 @@
+ALTER TABLE PM_BSC_STAFF_INFO
+ ADD (vc_office_online  VARCHAR2(20));
+
+ALTER TABLE PM_BSC_STAFF_INFO
+ ADD (vc_virtual_num  VARCHAR2(20));
+
+ALTER TABLE PM_BSC_STAFF_INFO
+ ADD (vc_transfer_node  VARCHAR2(20));

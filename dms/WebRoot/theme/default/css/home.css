@@ -1,0 +1,92 @@
+/*==================================================
+ 
+ *filename:              home.css
+ *Description:           Global css
+ *Version:               1.0.0(2009-12-29)
+ *Project:               Bolt platform
+ *Author:                wzyi
+ 
+===================================================*/
+a {text-decoration:underline; color:#1e5494;}
+a:hover {text-decoration:underline; color:#ff0000;}
+
+
+* { margin:0; padding:0; list-style:none;}
+html { height:100%; overflow:hidden; background:#fff; font-family:Arial, Helvetica, sans-serif;}
+body { height:100%; overflow:hidden; background:#fff;}
+/*---ie6---*/
+html {*padding:79px 0px 0px 0px;}
+
+
+/*===============header css================*/
+.bolt_header {position:absolute; font-size:12px; left:0px; top:0px; overflow:hidden; width:100%; background:url(../images/header_bg.jpg) repeat-x left top; height:79px;}
+/*---ie6---*/
+.bolt_header {*height:79px; *margin-top:0px; *position:absolute; *top:0; *right:0; *bottom:0; *left:0;}
+.logo {float:left; margin-left:20px; display:inline; text-align:left; overflow:hidden; width:300px;}
+.user { margin-left:30px; margin-top:10px; padding-left:20px; display:inline; width:160px; overflow:hidden; text-align:left; background:url(../images/user.gif) left 3px no-repeat; line-height:25px;}
+.close {position:absolute; right:0px; top:10px; line-height:25px; overflow:hidden;  text-align:right; font-size:12px;}
+.close span {margin-right:10px; display:inline; overflow:hidden;}
+.close p {float:right; overflow:hidden; background:url(../images/prompt_bg.jpg) left top no-repeat; width:311px; height:26px; line-height:26px; margin-top:16px; text-indent:38px; text-align:left; font-size:12px; color:#012a4a;}
+
+
+
+
+
+/*.bolt_main {position:absolute; width:100%; left:206px; top:79px; bottom:0px; right:0px; overflow:hidden; background:url(../images/main_bg.jpg) repeat-x left top;}
+.bolt_main {position:absolute; left:206px; top:79px; bottom:0px; right:0px; overflow:hidden; background:url(../images/main_bg.jpg) repeat-x left top;}
+.bolt_main iframe {width:100%; height:100%;}
+.bolt_main {*height:100%; *position:relative; *top:0; *right:0; *bottom:0; *background:url(../images/main_bg.jpg) repeat-x left top;}
+* html .bolt_main {left:-3px;}
+*+html .bolt_main {left:0px;}*/
+
+
+/*===============main css================*/
+/*.bolt_main {position:absolute; width:100%; left:206px; top:79px; bottom:0px; right:0px; overflow:hidden; background:url(../images/main_bg.jpg) repeat-x left top;}*/
+.bolt_main {position:absolute; left:206px; top:79px; bottom:0px; right:0px; overflow:hidden; background:url(../images/iner_title_name_b.png) repeat-x left top;}
+.bolt_main iframe {width:100%; height:100%;}
+.bolt_main {*height:100%; *position:relative; *top:0; *right:0; *bottom:0; *background:url(../images/iner_title_name_b.png) repeat-x left top;}
+* html .bolt_main {left:-3px;}
+*+html .bolt_main {left:0px;}
+
+/*===============left css================*/
+.bolt_left {width:206px; position:absolute; background:url(../images/left_bg.jpg) repeat-y left top; overflow:hidden; left:0px; top:79px; bottom:0px;}
+/*---------ie6-----------*/
+.bolt_left {*height:100%; *float:left; *width:205px; *position:relative; *top:0; *right:0; *bottom:0; *left:0;}
+.bolt_left_top {width:197px; position:absolute; top:0px; left:0px; height:6px; text-align:left; overflow:hidden;}
+.bolt_left_bottom {width:197px; position:absolute; left:0px; height:12px; bottom:0px; _bottom:-1px; text-align:left; overflow:hidden;}
+.bolt_left_menu {width:197px; position:absolute; left:0px; top:8px; bottom:12px; background:url(../images/left_menu_bg.jpg) left top repeat-y; overflow:hidden; color:#1e5494;}
+
+/*================first menu==================*/
+h3 {line-height:35px; color:#3a6eaa; height:35px; font-size:14px; overflow:hidden; border-top:#a9cbe5 1px solid; width:195px; text-align:left; clear:both; cursor:pointer;}
+h3 a {display:block; color:#3a6eaa; text-decoration:none; background:url(../images/li_a_bg.jpg) no-repeat left top; font-size:14px;}
+h3 a:hover {display:block; color:#3a6eaa; text-decoration:none; background:url(../images/li_hover_bg.jpg) no-repeat left top; font-size:14px; font-weight:bold;}
+h3 span { float:left; margin-left:15px; margin-top:8px; margin-right:15px; display:inline;}
+h3.select {display:block; background:url(../images/li_hover_bg.jpg) no-repeat left top; color:#1e5494; border-bottom:#adcee6 1px solid; font-size:14px; font-weight:bold;}
+
+/*================other menu==================*/
+.list_menu {border-top:#adcee6 1px solid; border-bottom:#adcee6 1px solid; overflow:hidden; border-right:#adcee6 1px solid; width:192px; height:260px; overflow-y:auto; overflow-x:hidden; float:left; font-size:12px; margin-bottom:3px; margin-top:3px; line-height:22px; display:inline;}
+h4 {font-size:12px; font-weight:100; line-height:25px; float:left; display:inline; height:25px; overflow:hidden; margin-left:10px; width:165px; background:url(../images/list_menu_icon.jpg) left center no-repeat; text-indent:10px; padding:0px;}
+.list_menu a{text-decoration:underline;}
+.list_menu  a:hover {text-decoration:underline; color:#ff0000;}
+.list_submenu {float:left; margin-left:45px; overflow:hidden; display:inline;}
+h5 {font-size:12px; font-weight:100; line-height:25px; float:left; display:inline; height:25px; overflow:hidden; margin-left:30px; padding:0px; width:155px;}
+h6 {font-size:12px; font-weight:100; line-height:25px; float:left; display:inline; height:25px; overflow:hidden; margin-left:45px; padding:0px; width:135px;}
+.shortcut {width:135px; font-size:12px; line-height:25px; float:left; display:inline; margin-left:45px; overflow:hidden;}
+.shortcut_sub {width:100px; font-size:12px; line-height:25px; float:left; display:inline; margin-left:60px; overflow:hidden;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

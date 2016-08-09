@@ -1,0 +1,6 @@
+url=jdbc\:oracle\:thin\:@192.168.2.99\:1521\:orcl
+username=pspm
+password=pspm
+driverClassName=oracle.jdbc.driver.OracleDriver
+hibernate.show_sql=false
+hibernate.format_sql=false

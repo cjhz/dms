@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.objectFactory" value="spring"/>
+    <constant name="struts.convention.result.path" value="/views" />
+	<constant name="struts.convention.classes.reload" value="false" />
+	<constant name="struts.devMode" value="false"/>
+	<constant name="struts.convention.default.parent.package" value="base-package" />
+	<constant name="struts.custom.i18n.resources" value="messageResource" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+
+    <package name="base-package" namespace="/" extends="struts-default">
+    
+    	<interceptors>
+    		<interceptor name="logon" class="com.sunraysoft.hr.web.filter.LogonInterceptor" />
+			<interceptor name="permission" class="com.sunraysoft.hr.web.filter.PermissionInterceptor" />
+			<interceptor name="exceptionManager" class="com.sunraysoft.hr.web.filter.ExceptionInterceptor"/>
+			
+			<interceptor-stack name="bao-stack">
+				<interceptor-ref name="logon"/>
+				<interceptor-ref name="permission"/>
+				<interceptor-ref name="paramsPrepareParamsStack"/>
+				<interceptor-ref name="exceptionManager" />
+			</interceptor-stack>
+		</interceptors>
+		
+        <default-interceptor-ref name="bao-stack"/>
+ 		
+        <global-results>
+            <result name="jsonPage" type="freemarker">/views/common/json.ftl</result>
+            <result name="errorPage" type="freemarker">/views/common/error.ftl</result>
+            <result name="needPermissionPage" type="freemarker">/views/common/need_permission.ftl</result>
+            <result name="loginPage" type="redirect">/common/loginPage.action</result>
+            <result name="segmentPage" type="freemarker">/views/common/segment.ftl</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping result="errorPage" exception="com.sunraysoft.hr.exceptions.BaoSystemException" />
+        </global-exception-mappings>
+        
+    </package>
+</struts>

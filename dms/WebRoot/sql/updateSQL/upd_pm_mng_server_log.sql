@@ -1,0 +1,2 @@
+ALTER TABLE PM_MNG_SERVER_LOG
+ ADD (vc_data_pid  NUMBER(20));
